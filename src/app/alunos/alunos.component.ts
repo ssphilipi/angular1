@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Aluno } from '../aluno';
 import { ALUNOS } from '../mock-alunos';
 
@@ -11,6 +11,7 @@ export class AlunosComponent implements OnInit {
 
   alunos = ALUNOS;
   selectedAluno: Aluno;
+  @Input() aluno: Aluno;
 
   constructor() { }
 

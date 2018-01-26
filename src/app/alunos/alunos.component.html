@@ -13,20 +13,21 @@
 </div>
 -->
 
-<div *ngIf="selectedAluno">
-    <h2>Detalhes de {{ selectedAluno.name | uppercase }}</h2>
-    <div><span>id: </span>{{selectedAluno.id}}</div>
+<!-- <div *ngIf="aluno">
+    <h2>Detalhes de {{ aluno.name | uppercase }}</h2>
+    <div><span>id: </span>{{aluno.id}}</div>
     <div>
         <label>name:
-            <input [(ngModel)]="selectedAluno.name" placeholder="name">
+            <input [(ngModel)]="aluno.name" placeholder="name">
         </label>
     </div>
-</div>
+</div> -->
 
+<app-aluno-detail [aluno]="selectedAluno"></app-aluno-detail>
 
 <h2>Meus alunos</h2>
 <ul class="alunos">
-<li *ngFor="let aluno of alunos" (click)="onSelect(aluno)">
+<li *ngFor="let aluno of alunos" (click)="onSelect(aluno)" [class.selected]="aluno === selectedAluno">
   <span class="badge">{{ aluno.id }}</span> {{ aluno.name }}
 </li>
 </ul>
